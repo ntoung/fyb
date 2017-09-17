@@ -66,6 +66,7 @@ class AppToolbar extends Component {
 
 AppToolbar.propTypes = {
   openCreateReportModal: PropTypes.func.isRequired,
+  openPrintModal: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
