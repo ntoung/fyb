@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import { ENV, DIST, HOT } from 'Config';
+import { ENV, DIST, HOT } from '../config/config';
 
 import webpackConfig from '../../webpack.config';
 import webpackHotConfig from '../../webpack.dev_hot.config';
