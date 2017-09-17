@@ -5,7 +5,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../../webpack.config';
 import webpackHotConfig from '../../webpack.dev_hot.config';
 // import webpackDevHot from '../../webpack.dev_hot.config';
-import { ENV, DIST, HOT } from '../config/config';
+import { ENV, DIST, HOT } from '../config/config.js';
 
 export default (app) => {
   if (ENV === 'development') {
