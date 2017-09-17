@@ -1,20 +1,24 @@
-'use strict';
-
 import express from 'express';
-import { PORT } from './config/config.js';
+// import history from 'connect-history-api-fallback';
+
 import webpack from './middleware/webpack';
+
+import { PORT } from './config/config';
 
 const app = express();
 
+// app.use(history({
+//   verbose: true,
+//   disableDotRule: false,
+// }));
 
-
-//const api = require('./api/api');
+// const api = require('./api/api');
 
 // This provides help with console logging
-//require('./middleware/loggers')(app);
+// require('./middleware/loggers')(app);
 
 // API Routing
-//app.use('/api', api);
+// app.use('/api', api);
 webpack(app);
 
 app.listen(PORT);

@@ -1,0 +1,185 @@
+$break-phone-min: 0px;
+$break-phone-max: 641px;
+$break-computer-min: 1026px;
+
+body {
+  min-width: 575px;
+  overflow: scroll;
+}
+
+div {
+  font-size: 14px;
+}
+
+.inputContainer {
+  margin: 40px 0;
+  position: relative;
+  // min-height: 60vh;
+  height: 80vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.buttonGroup {
+  &.inputButtonGroup {
+    display: inline;
+    float: right;
+  }
+}
+
+
+
+// .buttonGroup:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+
+.graphContainer {
+
+}
+
+.mainContainer {
+  display: block;
+}
+
+.reportContainer {
+  height: 90%;
+  margin: 0px auto;
+  padding: 10px;
+}
+
+.printContainer {
+  display: none;
+}
+
+@media print {
+  .mainContainer {
+    display: none;
+  }
+
+  .printContainer {
+    display: block;
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  // Mobile
+  @media screen and (min-width: $break-phone-min) {
+
+  }
+  // Desktop
+  @media screen and (min-width: $break-phone-max) {
+
+  }
+}
+
+.itemMain {
+  flex: 2 auto;
+  width: 300px;
+  padding: 10px;
+  
+
+  // Mobile
+  @media screen and (min-width: $break-phone-min) {
+
+  }
+  // Desktop
+  @media screen and (min-width: $break-phone-max) {
+    border-left: .5px solid #efefef;
+  }
+}
+
+.itemSide {
+  flex: 1 auto;
+  width: 200px;
+  padding: 10px;
+}
+
+.item {
+  flex: 1 auto;
+  width: 300px;
+}
+
+$ct-series-colors: (
+  #d70206,
+  #f05b4f,
+  #f4c63d,
+  #d17905,
+  #453d3f,
+  #59922b,
+  #0544d3,
+  #6b0392,
+  #f05b4f,
+  #dda458,
+  #eacf7d,
+  #86797d,
+  #b2c326,
+  #6188e2,
+  #a748ca
+) !default;
+
+.ct-chart {
+  position: relative;
+  height: 390px;
+}
+
+.ct-label {
+  font-size: 1.2em;
+}
+
+.ct-legend {
+    position: relative;
+    z-index: 10;
+    list-style: none;
+    min-width: 200px;
+
+    height: 50px;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 0;
+
+    li {
+        position: relative;
+        padding-left: 23px;
+        margin-bottom: 3px;
+        margin: 5px;
+    }
+
+    li:before {
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        left: 0;
+        content: '';
+        border: 3px solid transparent;
+        border-radius: 2px;
+    }
+
+    li.inactive:before {
+        background: transparent;
+    }
+
+    &.ct-legend-inside {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    @for $i from 0 to length($ct-series-colors) {
+        .ct-series-#{$i}:before {
+            background-color: nth($ct-series-colors, $i + 1);
+            border-color: nth($ct-series-colors, $i + 1);
+        }
+    }
+}

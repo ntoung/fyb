@@ -1,0 +1,1 @@
+web: babel-node --presets=es2015 -- server/app.js

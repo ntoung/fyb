@@ -4,9 +4,6 @@ const webpack = require('webpack');
 // This plugin gets useful information from webpack and stores
 // it in a json file. It will help webpack talk with Django.
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 
 const basePath = path.resolve(__dirname);
 
@@ -15,31 +12,6 @@ module.exports = {
   context: path.join(basePath, 'client'),
   devtool: 'eval-source-map',
 
-  // entry: {
-  //   main: './index.jsx',
-  //   styles: './styles/main.scss',
-  // },
-
-  // output: {
-  //   path: path.join(basePath, 'dist'),
-  //   filename: '[name].bundle.js',
-  // },
-
-  // plugins: [
-  //   new webpack.HotModuleReplacementPlugin(),
-  //   new webpack.NoEmitOnErrorsPlugin(),
-  //   new HtmlWebpackPlugin({
-  //     template: 'index.tpl.html',
-  //     inject: 'body',
-  //     filename: 'index.html',
-  //   }),
-  //   new ExtractTextPlugin({
-  //     filename: '[name].bundle.css',
-  //   }),
-  // ],
-
-
-  // HMR
   entry: [
     './index.jsx',
     'webpack-hot-middleware/client?reload=true',
@@ -81,27 +53,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        // use: ExtractTextPlugin.extract({
-        //   fallback: 'style-loader',
-        //   use: [
-        //     'css-loader',
-        //     'resolve-url-loader',
-        //     {
-        //       loader: 'postcss-loader',
-        //       options: {
-        //         plugins: () => [
-        //           autoprefixer(),
-        //           cssnano(),
-        //         ],
-        //       },
-
-        //     },
-        //     'sass-loader',
-        //   ],
-        // }),
-
-        // HMR
-
         use: [{
           loader: 'style-loader',
         }, {
@@ -135,15 +86,7 @@ module.exports = {
   resolve: {
     // tells webpack where to look for modules
     modules: ['node_modules'],
-    alias: {
-      Actions: path.join(basePath, 'client/actions/'),
-      ActionTypes: path.join(basePath, 'client/actions/actionTypes'),
-      Components: path.join(basePath, 'client/components'),
-      Constants: path.join(basePath, 'client/reducers/constants'),
-      Containers: path.join(basePath, 'client/containers'),
-      Modals: path.join(basePath, 'client/components/modals'),
-      Reducers: path.join(basePath, 'client/reducers'),
-    },
+
     // extensions that should be used to resolve modules
     extensions: ['.js', '.jsx', '.scss', '.css'],
   },
