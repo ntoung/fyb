@@ -139,6 +139,7 @@ module.exports = {
       Actions: path.join(basePath, 'client/actions/'),
       ActionTypes: path.join(basePath, 'client/actions/actionTypes'),
       Components: path.join(basePath, 'client/components'),
+      Config: path.join(basePath, 'server/config/config.js'),
       Constants: path.join(basePath, 'client/reducers/constants'),
       Containers: path.join(basePath, 'client/containers'),
       Modals: path.join(basePath, 'client/components/modals'),
