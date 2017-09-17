@@ -1,1 +1,1 @@
-web: babel-node --presets=es2015 -- server/app.js
+web: babel-node --presets=es2015 -- server/app.js NODE_ENV=production
