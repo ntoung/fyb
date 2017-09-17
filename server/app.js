@@ -3,9 +3,11 @@ import express from 'express';
 
 import webpack from './middleware/webpack';
 
-import { PORT } from './config/config';
+import { PORT, DIST } from './config/config';
 
 const app = express();
+
+app.use(express.static(DIST));
 
 // app.use(history({
 //   verbose: true,
