@@ -54,9 +54,12 @@
     "webpack": "^3.4.1",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-dev-server": "^2.7.1",
-    "webpack-hot-middleware": "^2.18.2"
-  },
-  "devDependencies": {
+    "webpack-hot-middleware": "^2.18.2",
+
+    /*
+     * Dev dependencies
+     */
+
     "babel-loader": "^7.1.1",
     "body-parser": "^1.17.2",
     "clean-webpack-plugin": "^0.1.16",
@@ -77,5 +80,8 @@
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"
+  },
+  "devDependencies": {
+    
   }
 }
