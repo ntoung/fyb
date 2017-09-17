@@ -7,8 +7,6 @@ import { PORT, DIST } from './config/config';
 
 const app = express();
 
-app.use(express.static(DIST));
-
 // app.use(history({
 //   verbose: true,
 //   disableDotRule: false,

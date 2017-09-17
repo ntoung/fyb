@@ -9,7 +9,11 @@ const PrintView = props => (
     Print View
     {
       props.printList.map(reportId => (
-        <h1>{props.reports.get(reportId).get('name')}</h1>
+        <div
+          key={reportId}
+        >
+          <h1>{props.reports.get(reportId).get('name')}</h1>
+        </div>
       ))
     }
   </div>

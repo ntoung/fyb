@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import express from 'express';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import { ENV, DIST, HOT } from '../config/config';
@@ -37,6 +38,7 @@ export default (app) => {
   }
 
   if (ENV === 'production') {
+    app.use(express.static(DIST));
     app.get('*', (req, res) => {
       res.sendFile(path.join(DIST, 'index.html'));
     });
