@@ -10,13 +10,14 @@ import {
   SET_BUDGET,
 } from 'ActionTypes';
 
-import { createItem, createReport } from 'Constants';
+import { inputIdGenerator, createItem, createReport } from 'Constants';
 
 const nextReportId = () => crypto.randomBytes(20).toString('hex');
 
 
 export default function Reports(state = OrderedMap(), action) {
   let reportId;
+
   switch (action.type) {
     case ADD_REPORT:
       reportId = nextReportId();
@@ -28,9 +29,19 @@ export default function Reports(state = OrderedMap(), action) {
     case SET_GRAPH_TYPE:
       return state.setIn([action.reportId, 'graphType'], action.graphType);
     case ADD_GRAPH_INPUT:
-      return state.updateIn([action.reportId, 'inputs'], inputs => inputs.push(
-        createItem(state.getIn([action.reportId, 'inputIdGenerator'])()),
-      ));
+      return state
+        .updateIn(
+          [action.reportId, 'inputs'],
+          inputs => inputs.push(
+            createItem(inputIdGenerator(
+              action.reportId,
+              state.getIn([action.reportId, 'inputSuffix']),
+            )),
+          ))
+        .updateIn(
+          [action.reportId, 'inputSuffix'],
+          inputSuffix => inputSuffix + 1,
+        );
     case REMOVE_GRAPH_INPUT:
       return state.updateIn([action.reportId, 'inputs'], inputs => inputs.filter(input =>
         input.get('inputId') !== action.inputId,

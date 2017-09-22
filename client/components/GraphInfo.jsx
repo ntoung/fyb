@@ -21,7 +21,7 @@ class GraphInfo extends Component {
 
   setBudget(e) {
     const budget = e.target.value;
-    this.props.setBudget({ budget });
+    this.props.setBudget(this.props.reportId, +budget);
   }
 
   handleChangeGraphType(event, index, val) {
@@ -70,7 +70,7 @@ class GraphInfo extends Component {
                 margin: '0 12px',
               }}
               hintText="$0.00"
-              floatingLabelText="Cost"
+              floatingLabelText="Budget"
               floatingLabelFixed
               type="number"
               name="inputCost"
@@ -89,6 +89,7 @@ GraphInfo.propTypes = {
   budget: PropTypes.number.isRequired,
   setGraphType: PropTypes.func.isRequired,
   setBudget: PropTypes.func.isRequired,
+  reportId: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state, props) => ({

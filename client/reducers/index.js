@@ -15,6 +15,18 @@ export const initialState = fromJS({
     PrintList: List([]),
   },
   Reports: OrderedMap({}),
+  /*
+   * graphType: 1,
+   * budget: 0,
+   * inputs: [{
+   *   inputId: 1,
+   *   inputName: '',
+   *   inputCost: undefined,
+   *   inputFrequency: 1,
+   *   inputSerialNumber: undefined,
+   * }],
+   */
+
 });
 
 export const reducers = combineReducers({

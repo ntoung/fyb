@@ -34,7 +34,8 @@ class Graph extends Component {
       });
     });
 
-    total /= 100;
+    // total /= 100;
+    total = this.props.budget;
 
     const data = { series };
 
@@ -65,11 +66,13 @@ class Graph extends Component {
 Graph.propTypes = {
   graphType: PropTypes.number.isRequired,
   inputs: ImmutablePropTypes.list.isRequired,
+  budget: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state, props) => ({
   graphType: state.getIn(['Reports', props.reportId]).get('graphType'),
   inputs: state.getIn(['Reports', props.reportId]).get('inputs'),
+  budget: state.getIn(['Reports', props.reportId]).get('budget'),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ }, dispatch);

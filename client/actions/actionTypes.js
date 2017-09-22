@@ -1,11 +1,15 @@
 /*
+ * Persist Actions
+ */
+export const REHYDRATE = 'persist/REHYDRATE';
+
+/*
  * App Actions
  */
 export const OPEN_CREATE_REPORT_MODAL = 'OPEN_CREATE_REPORT_MODAL';
 export const CLOSE_CREATE_REPORT_MODAL = 'CLOSE_CREATE_REPORT_MODAL';
 export const OPEN_PRINT_MODAL = 'OPEN_PRINT_MODAL';
 export const CLOSE_PRINT_MODAL = 'CLOSE_PRINT_MODAL';
-
 
 /*
  * Graph Actions
