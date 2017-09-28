@@ -22,7 +22,6 @@ const PrintView = props => (
 
         let totalExpenses = 0;
 
-
         return (
           <div
             key={reportId}
