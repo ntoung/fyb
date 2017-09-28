@@ -1,4 +1,4 @@
-import { Map, OrderedMap } from 'immutable';
+import { Map, OrderedMap, fromJS } from 'immutable';
 import crypto from 'crypto-browserify';
 
 import {
@@ -8,6 +8,7 @@ import {
   REMOVE_GRAPH_INPUT,
   UPDATE_GRAPH_INPUT,
   SET_BUDGET,
+  IMPORT_REPORTS,
 } from 'ActionTypes';
 
 import { inputIdGenerator, createItem, createReport } from 'Constants';
@@ -17,7 +18,13 @@ const nextReportId = () => crypto.randomBytes(20).toString('hex');
 
 export default function Reports(state = OrderedMap(), action) {
   let reportId;
-
+  if (action.type === IMPORT_REPORTS) {
+    debugger;
+    
+    // console.log(fromJS(action.reports));
+    console.log(state.mergeDeep(fromJS(action.reports)));
+    // console.log(OrderedMap(fromJS(action.reports)).mergeDeep(state));
+  }
   switch (action.type) {
     case ADD_REPORT:
       reportId = nextReportId();
@@ -55,6 +62,8 @@ export default function Reports(state = OrderedMap(), action) {
       }));
     case SET_BUDGET:
       return state.setIn([action.reportId, 'budget'], action.budget);
+    case IMPORT_REPORTS:
+      return OrderedMap(fromJS(action.reports)).mergeDeep(state);
     default:
       return state;
   }

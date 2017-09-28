@@ -9,6 +9,8 @@ import Reports from 'Containers/Reports';
 import PrintView from 'Containers/PrintView';
 import CreateReportModal from 'Modals/CreateReportModal';
 import PrintModal from 'Modals/PrintModal';
+import ImportModal from 'Modals/ImportModal';
+import ExportModal from 'Modals/ExportModal';
 
 const App = () => (
   <div>
@@ -26,6 +28,8 @@ const App = () => (
       <Reports />
       <CreateReportModal />
       <PrintModal />
+      <ImportModal />
+      <ExportModal />
     </div>
     <div className="printContainer">
       <PrintView />

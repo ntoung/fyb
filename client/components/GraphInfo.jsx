@@ -59,7 +59,7 @@ class GraphInfo extends Component {
               name="view"
               value={this.props.view}
               onChange={this.handleChangeView}
-              defaultValue={1}
+              defaultValue={2}
             >
               <MenuItem value={1} primaryText="Graph" />
               <MenuItem value={2} primaryText="Table" />

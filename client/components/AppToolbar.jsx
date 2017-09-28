@@ -10,7 +10,7 @@ import Print from 'material-ui/svg-icons/action/print';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 
-import { openPrintModal, openCreateReportModal } from 'Actions';
+import { openPrintModal, openImportModal, openExportModal, openCreateReportModal } from 'Actions';
 
 class AppToolbar extends Component {
   constructor(props) {
@@ -39,15 +39,17 @@ class AppToolbar extends Component {
             onClick={this.props.openPrintModal}
           />
           <RaisedButton
-            label="Upload"
+            label="Export"
             labelPosition="before"
             icon={<FileUpload />}
+            onClick={this.props.openExportModal}
             style={{ margin: 12 }}
           />
           <RaisedButton
-            label="Download"
+            label="Import"
             labelPosition="before"
             icon={<FileDownload />}
+            onClick={this.props.openImportModal}
             style={{ margin: 12 }}
           />
           <RaisedButton
@@ -67,12 +69,15 @@ class AppToolbar extends Component {
 AppToolbar.propTypes = {
   openCreateReportModal: PropTypes.func.isRequired,
   openPrintModal: PropTypes.func.isRequired,
+  openImportModal: PropTypes.func.isRequired,
+  openExportModal: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
+  state: state,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  openPrintModal, openCreateReportModal }, dispatch);
+  openPrintModal, openCreateReportModal, openImportModal, openExportModal }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppToolbar);

@@ -41,6 +41,7 @@ const PrintView = props => (
                   <TableHeaderColumn><h4>Name</h4></TableHeaderColumn>
                   <TableHeaderColumn><h4>Total Cost</h4></TableHeaderColumn>
                   <TableHeaderColumn><h4>Percent of Budget</h4></TableHeaderColumn>
+                  <TableHeaderColumn><h4>Serial Number</h4></TableHeaderColumn>
                 </TableRow>
               </TableHeader>
               <TableBody
@@ -52,12 +53,14 @@ const PrintView = props => (
                     const totalCost = input.get('inputCost') * input.get('inputFrequency') || 0;
                     totalExpenses += totalCost;
                     const percentOfBudget = ((totalCost / budget) * 100).toFixed(2) || 0;
+                    const inputSerialNumber = input.get('inputSerialNumber');
 
                     return (
                       <TableRow key={input.get('inputId')}>
                         <TableRowColumn>{name}</TableRowColumn>
                         <TableRowColumn>${totalCost}</TableRowColumn>
                         <TableRowColumn>{percentOfBudget}</TableRowColumn>
+                        <TableRowColumn>{inputSerialNumber}</TableRowColumn>
                       </TableRow>
                     );
                   })

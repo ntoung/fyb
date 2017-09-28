@@ -10,6 +10,10 @@ export const openCreateReportModal = App.openCreateReportModal;
 export const closeCreateReportModal = App.closeCreateReportModal;
 export const openPrintModal = App.openPrintModal;
 export const closePrintModal = App.closePrintModal;
+export const openImportModal = App.openImportModal;
+export const closeImportModal = App.closeImportModal;
+export const openExportModal = App.openExportModal;
+export const closeExportModal = App.closeExportModal;
 
 /*
  * Graph Creators
@@ -29,6 +33,7 @@ export const addGraphInput = Reports.addGraphInput;
 export const removeGraphInput = Reports.removeGraphInput;
 export const updateGraphInput = Reports.updateGraphInput;
 export const setBudget = Reports.setBudget;
+export const importReports = Reports.importReports;
 
 /*
  * Print Creators

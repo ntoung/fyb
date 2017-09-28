@@ -10,6 +10,8 @@ export const initialState = fromJS({
   App: {
     createReportModalOpen: false,
     printModalOpen: false,
+    importModalOpen: false,
+    exportModalOpen: false,
   },
   Print: {
     PrintList: List([]),

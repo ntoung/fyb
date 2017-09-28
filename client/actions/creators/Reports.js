@@ -5,7 +5,15 @@ import {
   REMOVE_GRAPH_INPUT,
   UPDATE_GRAPH_INPUT,
   SET_BUDGET,
+  IMPORT_REPORTS,
 } from 'ActionTypes';
+
+export function importReports(reports) {
+  return {
+    type: IMPORT_REPORTS,
+    reports,
+  };
+}
 
 export function addReport(name, subtitle) {
   return {
