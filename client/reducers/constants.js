@@ -11,7 +11,7 @@ export function createReport(reportId, name, subtitle) {
   return Map({
     name,
     subtitle,
-    graphType: 1,
+    view: 1,
     budget: 0,
     inputSuffix: 0,
     inputs: List([]),

@@ -16,7 +16,7 @@ export const initialState = fromJS({
   },
   Reports: OrderedMap({}),
   /*
-   * graphType: 1,
+   * view: 1,
    * budget: 0,
    * inputs: [{
    *   inputId: 1,

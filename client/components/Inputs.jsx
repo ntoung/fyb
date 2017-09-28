@@ -24,11 +24,6 @@ class Inputs extends Component {
         <span>
           <div className="inputButtonGroup buttonGroup">
             <RaisedButton
-              label="Save"
-              primary
-              style={{ margin: 12, float: 'right' }}
-            />
-            <RaisedButton
               label="Add Input"
               onClick={this.handleAddInput}
               style={{ margin: 12, float: 'right' }}

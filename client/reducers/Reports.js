@@ -3,7 +3,7 @@ import crypto from 'crypto-browserify';
 
 import {
   ADD_REPORT,
-  SET_GRAPH_TYPE,
+  SET_VIEW,
   ADD_GRAPH_INPUT,
   REMOVE_GRAPH_INPUT,
   UPDATE_GRAPH_INPUT,
@@ -26,8 +26,8 @@ export default function Reports(state = OrderedMap(), action) {
         action.name,
         action.subtitle,
       ));
-    case SET_GRAPH_TYPE:
-      return state.setIn([action.reportId, 'graphType'], action.graphType);
+    case SET_VIEW:
+      return state.setIn([action.reportId, 'view'], action.view);
     case ADD_GRAPH_INPUT:
       return state
         .updateIn(

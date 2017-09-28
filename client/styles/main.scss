@@ -43,14 +43,15 @@ div {
   display: block;
 }
 
+.printContainer {
+  display: none;
+  font-family: Roboto, sans-serif;
+}
+
 .reportContainer {
   height: 90%;
   margin: 0px auto;
   padding: 10px;
-}
-
-.printContainer {
-  display: none;
 }
 
 @media print {

@@ -1,6 +1,6 @@
 import {
   ADD_REPORT,
-  SET_GRAPH_TYPE,
+  SET_VIEW,
   ADD_GRAPH_INPUT,
   REMOVE_GRAPH_INPUT,
   UPDATE_GRAPH_INPUT,
@@ -15,11 +15,11 @@ export function addReport(name, subtitle) {
   };
 }
 
-export function setGraphType(reportId, graphType) {
+export function setView(reportId, view) {
   return {
-    type: SET_GRAPH_TYPE,
+    type: SET_VIEW,
     reportId,
-    graphType,
+    view,
   };
 }
 

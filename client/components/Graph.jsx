@@ -14,7 +14,7 @@ class Graph extends Component {
   }
 
   render() {
-    const graphType = (this.props.graphType === 1) ? 'Pie' : 'Line';
+    const graphType = 'Pie';
 
     let total = 0;
     const series = [];
@@ -35,7 +35,7 @@ class Graph extends Component {
     });
 
     // total /= 100;
-    total = this.props.budget;
+    total = this.props.budget / 100;
 
     const data = { series };
 
@@ -64,13 +64,11 @@ class Graph extends Component {
 }
 
 Graph.propTypes = {
-  graphType: PropTypes.number.isRequired,
   inputs: ImmutablePropTypes.list.isRequired,
   budget: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state, props) => ({
-  graphType: state.getIn(['Reports', props.reportId]).get('graphType'),
   inputs: state.getIn(['Reports', props.reportId]).get('inputs'),
   budget: state.getIn(['Reports', props.reportId]).get('budget'),
 });

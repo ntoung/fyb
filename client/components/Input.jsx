@@ -78,7 +78,7 @@ class Input extends Component {
         >
           <MenuItem value={1} primaryText="One-Time" />
           <MenuItem value={365} primaryText="Daily" />
-          <MenuItem value={7} primaryText="Weekly" />
+          <MenuItem value={52} primaryText="Weekly" />
           <MenuItem value={12} primaryText="Monthly" />
         </SelectField>
         <TextField

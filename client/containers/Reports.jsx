@@ -8,6 +8,31 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 import GraphInfo from 'Components/GraphInfo';
 import Inputs from 'Components/Inputs';
 import Graph from 'Components/Graph';
+import DataTable from 'Components/DataTable';
+
+const generateView = (reportId, view) => {
+  switch (view) {
+    case 1:
+      return (
+        <div>
+          <Subheader>Graph</Subheader>
+          <Graph
+            reportId={reportId}
+          />
+        </div>
+      );
+    case 2:
+    default:
+      return (
+        <div>
+          <Subheader>Table</Subheader>
+          <DataTable
+            reportId={reportId}
+          />
+        </div>
+      );
+  }
+};
 
 const Reports = props => (
   <div>
@@ -40,10 +65,9 @@ const Reports = props => (
                   <GraphInfo
                     reportId={reportId}
                   />
-                  <Subheader>Graph</Subheader>
-                  <Graph
-                    reportId={reportId}
-                  />
+                  {
+                    generateView(reportId, report.get('view'))
+                  }
                 </div>
               </div>
               <div className="itemMain">

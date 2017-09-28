@@ -24,7 +24,7 @@ export const closePrintModal = App.closePrintModal;
  * Reports Creators
  */
 export const addReport = Reports.addReport;
-export const setGraphType = Reports.setGraphType;
+export const setView = Reports.setView;
 export const addGraphInput = Reports.addGraphInput;
 export const removeGraphInput = Reports.removeGraphInput;
 export const updateGraphInput = Reports.updateGraphInput;

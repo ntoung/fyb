@@ -7,7 +7,7 @@ import { persistStore, autoRehydrate } from 'redux-persist-immutable';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -37,9 +37,11 @@ function logger({ getState }) {
 injectTapEventPlugin();
 
 const store = createStore(reducers, initialState,
-  autoRehydrate(),
-  composeWithDevTools(
-    applyMiddleware(thunk, logger),
+  compose(
+    autoRehydrate(),
+    composeWithDevTools(
+      applyMiddleware(thunk, logger),
+    ),
   ),
 );
 
